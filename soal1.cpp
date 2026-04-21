@@ -12,7 +12,6 @@ int main() {
     string tipe = "";
     bool formatValid = false;
     
-
     if (panjang == 14 && nomor[0] == '6' && nomor[1] == '5') {
         tipe = "NUSANTARA";
         formatValid = true;
@@ -29,12 +28,13 @@ int main() {
     }
     
 
-    if (!formatValid) {
+      if (!formatValid) {
         cout << "Tipe kartu: UNKNOWN" << endl;
         cout << "Nomor kartu TIDAK VALID." << endl;
         return 0;
     }
     
+
     cout << "Tipe kartu: " << tipe << endl;
     
 
@@ -42,7 +42,7 @@ int main() {
     bool ganda = false;  
     
 
-      for (int i = panjang - 1; i >= 0; i--) {
+    for (int i = panjang - 1; i >= 0; i--) {
         int digit = nomor[i] - '0';  
         
         if (ganda) {
@@ -59,7 +59,7 @@ int main() {
     }
     
 
-      if (total % 10 == 0) {
+    if (total % 10 == 0) {
         cout << "Nomor kartu VALID." << endl;
     } else {
         cout << "Nomor kartu TIDAK VALID." << endl;
