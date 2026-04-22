@@ -67,3 +67,34 @@ int main() {
     
     return 0;
 }
+/*
+
+
+step 1: cek kartu
+
+Dari input nomornya, program liat panjangnya berapa digit dan angka awalnya apa.
+- Kalau 14 digit & mulai dari 65 -> NUSANTARA
+- Kalau 16 digit & mulai dari 77/78 -> GARUDA
+- Kalau 15 digit & mulai dari 91 -> MERDEKA
+- Ga cocok semua ->h UNKNOWN. langsung  invalid.
+
+step 2: cek validitas
+
+
+
+Ambil nomor dari belakang (digit terakhir), lalu gerak ke depan. Setiap digit selang-seling dikali 2
+Digit paling belakang ga dikali, digit ke-2 dari belakang dikali 2, ke-3 ga dikali, ke-4 dikali lagi, dst.
+
+kalau hasil kali 2-nya lebih dari 9 (misal 8×2=16), maka digit-digitnya dijumlahin jadi satu angka (16 → 1+6=7).
+Terus semua hasilnya dijumlahin semuanya.
+Kalau hasil akhirnya habis dibagi 10, berarti nomornya valid. Kalau ga habis dibagi 10, berarti ada yang salah.
+
+bisa deteksi error, Karena algoritma ini dirancang supaya 1 perubahan digit bakal ngubah hasil total
+jadi ga kelipatan 10 lagi. Jadi kesalahan ketik biasanya langsung ketahuan.
+
+Contoh : misal ada nomor yang valid dan totalnya 60. 60 habis dibagi 10 maka valid.
+Kalau kita ubah 1 digit jadi totalnya 61, ya ga habis dibagi 10 → langsung ketahau invalid.
+
+Intinya cuma itung-itungan dari belakang ke depan, selang-seling dikali 2, trus cek apakah jumlahnya kelipatan 10.
+
+*/
