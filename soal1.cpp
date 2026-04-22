@@ -95,6 +95,6 @@ jadi ga kelipatan 10 lagi. Jadi kesalahan ketik biasanya langsung ketahuan.
 Contoh : misal ada nomor yang valid dan totalnya 60. 60 habis dibagi 10 maka valid.
 Kalau kita ubah 1 digit jadi totalnya 61, ya ga habis dibagi 10 → langsung ketahau invalid.
 
-Intinya cuma itung-itungan dari belakang ke depan, selang-seling dikali 2, trus cek apakah jumlahnya kelipatan 10.
+Intinya itung dari belakang ke depan, selang-seling dikali 2, dan cek apakah jumlahnya kelipatan 10.
 
 */
