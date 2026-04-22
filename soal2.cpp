@@ -106,3 +106,71 @@ int main() {
     
     return 0;
 }
+/*
+KODE PARKIR (10 digit): 2014506325 (contoh)
+
+Digit 1-2 → jenis kendaraan:
+10 = Mobil pribadi
+20 = Motor  
+30 = Bus
+
+Digit 3-6 → waktu masuk format HHMM (misal 1450 = jam 14:50)
+
+Digit 7-10 → nomor lokasi parkir (cuma dicetak, ga dipake buat hitung)
+
+
+Tarif parkir:
+
+Mobil: jam pertama Rp5000, jam berikutnya Rp3000 per jam
+Motor: jam pertama Rp3000, jam berikutnya Rp2000 per jam
+Bus: jam pertama Rp10000, jam berikutnya Rp7000 per jam
+
+
+alur program:
+
+1. Input kode parkir 10 digit dan jam keluar (format HHMM)
+
+2. Pecah kode jadi 3 bagian pake konversi char ke int manual:
+- Digit 1-2 → jenis kendaraan (buat tentuin tarif)
+- Digit 3-6 → jam masuk (dalam format angka HHMM)
+- Digit 7-10 → nomor lokasi
+
+3. Tentuin nama kendaraan dan tarif sesuai kode jenisnya
+
+4. Ubah jam masuk dan jam keluar dari format HHMM ke total menit:
+Misal 1430 → (14 × 60) + 30 = 870 menit
+Ini biar gampang ngitung selisihnya
+
+5. Hitung selisih waktu (keluar - masuk) dalam menit, lalu konversi ke jam.
+Kalau ada sisa menitnya (ga bulat), dibuletin ke atas (+1 jam).
+Contoh: 3 jam 15 menit dihitung 4 jam. Ini standar tempat parkir pada umumnya.
+
+6. Hitung biaya:
+Jam pertama bayar tarif pertama, sisanya (kalau ada) dikali tarif berikutnya.
+Contoh motor parkir 4 jam: 3000 + (3 × 2000) = 9000
+
+7. Cetak ringkasan lengkap: jenis kendaraan, waktu masuk, waktu keluar,
+durasi, lokasi, dan total biaya.
+
+
+CONTOH 
+Input:
+Kode: 2014506325
+Jam keluar: 1850
+
+Proses:
+- Jenis: 20 → Motor
+- Jam masuk: 1450 → jam 14, menit 50
+- Jam keluar: 1850 → jam 18, menit 50
+- Selisih: (18×60+50) - (14×60+50) = 1130 - 890 = 240 menit = 4 jam
+- Biaya: 3000 + (3 × 2000) = 9000
+
+Output:
+Jenis kendaraan: Motor
+Waktu masuk: 14:50
+Waktu keluar: 18:50
+Durasi parkir: 4 jam
+Lokasi parkir: 6325
+Total biaya: Rp 9000
+
+*/
